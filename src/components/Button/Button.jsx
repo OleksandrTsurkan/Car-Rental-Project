@@ -1,10 +1,9 @@
 import React from 'react';
-import { ButtonStyled } from './ButtomStyled';
+import { ButtonStyled } from './Button.styled';
 
 const Button = ({ padding, children }) => {
   return (
-    <ButtonStyled $padding={padding} type="button">
-      {' '}
+    <ButtonStyled type="button" $padding={padding}>
       {children}
     </ButtonStyled>
   );

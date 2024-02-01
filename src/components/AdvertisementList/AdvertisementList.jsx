@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { getAdverts, getStatusFilter } from '../../redux/selectors';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
@@ -12,7 +12,7 @@ const AdvertisementList = () => {
   if (filtered.length === 0) {
     return (
       <AdvertisementListStyled>
-        {adverts.map(advertisement => (
+        {adverts.map((advertisement) => (
           <Card key={uuidv4()} advertisement={advertisement} />
         ))}
       </AdvertisementListStyled>
@@ -20,7 +20,7 @@ const AdvertisementList = () => {
   } else {
     return (
       <AdvertisementListStyled>
-        {filtered.map(advertisement => (
+        {filtered.map((advertisement) => (
           <Card key={uuidv4()} advertisement={advertisement} />
         ))}
       </AdvertisementListStyled>
@@ -28,4 +28,4 @@ const AdvertisementList = () => {
   }
 };
 
-export default AdvertisementList
+export default AdvertisementList;

@@ -4,7 +4,7 @@ import {
   ImgWrapper,
   Img,
   MainText,
-  DescriptionWrapper,
+  DescriptionWrapper, 
   DescriptionText,
   AboutText,
   AboutMoreTitle,
@@ -20,7 +20,7 @@ import getSplitArray from 'helpers/getSplitArray';
 const CardFull = ({ id }) => {
   const adverts = useSelector(getAdverts);
 
-  const selectedAdvert = adverts.find(advert => advert.id === id);
+  const selectedAdvert = adverts.find((advert) => advert.id === id);
 
   if (!selectedAdvert) {
     return <p>Sorry. Something wrong. Try again later!</p>;
@@ -49,13 +49,13 @@ const CardFull = ({ id }) => {
   const spliterForConditions = '\n';
   const rentalConditionsArray = getSplitArray(
     rentalConditions,
-    spliterForConditions
+    spliterForConditions,
   );
 
   const spliterForMinimalAge = ': ';
   const minimalAgeArray = getSplitArray(
     rentalConditionsArray[0],
-    spliterForMinimalAge
+    spliterForMinimalAge,
   );
 
   return (

@@ -1,10 +1,10 @@
 import React from 'react';
-import Container from '../components/Container';
-import Welcome from '../components/Welcome';
+import Container from 'components/Container';
+import Welcome from 'components/Welcome';
 
 const Home = () => {
   return (
-    <Container >
+    <Container height="100vh" $paddingTop="50px">
       <Welcome />
     </Container>
   );

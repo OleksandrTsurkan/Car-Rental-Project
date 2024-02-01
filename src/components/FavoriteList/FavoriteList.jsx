@@ -9,7 +9,7 @@ const FavoriteList = () => {
   const favorites = useSelector(getFavorites);
   return (
     <FavoriteListStyled>
-      {favorites.map(advertisement => (
+      {favorites.map((advertisement) => (
         <Card key={uuidv4()} advertisement={advertisement} />
       ))}
     </FavoriteListStyled>

@@ -11,13 +11,13 @@ import {
 const modalRoot = document.getElementById('modal');
 
 function Modal({ children, onClick }) {
-  const handleKeyDown = e => {
+  const handleKeyDown = (e) => {
     if (e.code === 'Escape') {
       onClick();
     }
   };
 
-  const handleBackdropClick = e => {
+  const handleBackdropClick = (e) => {
     if (e.currentTarget === e.target) {
       onClick();
     }
@@ -43,7 +43,7 @@ function Modal({ children, onClick }) {
         </CloseIconWrapper>
       </ModalWindow>
     </ModalOverlay>,
-    modalRoot
+    modalRoot,
   );
 }
 

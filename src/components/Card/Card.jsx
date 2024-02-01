@@ -15,7 +15,7 @@ import {
   LinkButton,
 } from './Card.styled';
 import getSplitArray from 'helpers/getSplitArray';
-import sprite from '.../../assets/sprite.svg';
+import sprite from '../../assets/sprite.svg';
 import Modal from 'components/Modal';
 import CardFull from 'components/CardFull';
 import { getFavorites, getAdverts } from '../../redux/selectors';
@@ -43,23 +43,24 @@ const Card = ({ advertisement }) => {
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
-    setShowModal(prevState => !prevState);
+    setShowModal((prevState) => !prevState);
   };
+
   let spliterForAddress = ', ';
   let addressArray = getSplitArray(address, spliterForAddress);
 
   const handleFavorite = () => {
-    const favorite = favorites.find(object => {
+    const favorite = favorites.find((object) => {
       return object.id === id;
     });
-    const advert = adverts.find(object => object.id === id);
+    const advert = adverts.find((object) => object.id === id);
     if (!favorite) {
       dispatch(addFavorite(advert));
     } else {
       dispatch(deleteFavorite(favorite._id));
     }
   };
-  const isFavorite = favorites.some(object => object.id === id);
+  const isFavorite = favorites.some((object) => object.id === id);
   return (
     <CardWrapper>
       <ImgWrapper>

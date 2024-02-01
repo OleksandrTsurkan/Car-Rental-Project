@@ -5,7 +5,7 @@ import { getAdverts } from '../../redux/selectors';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { setFilter } from '../../redux/filterSlice';
-import makes from '../../data/makes.json';
+import makes from '../../data/makes';
 import prices from '../../data/proces.json';
 import { Form, Label, Select, SelectPrice } from './Filter.styled';
 
@@ -16,17 +16,19 @@ const Filter = () => {
   const [selectedMake, setSelectedMake] = useState('Enter the text');
   const [selectedPrice, setSelectedPrice] = useState('To $');
 
-  const handleMakeSelectChange = event => {
+  const handleMakeSelectChange = (event) => {
     setSelectedMake(event.target.value);
   };
 
-  const handlePriceSelectChange = event => {
+  const handlePriceSelectChange = (event) => {
     setSelectedPrice(event.target.value);
   };
 
-  const handleOnSubmit = event => {
+  const handleOnSubmit = (event) => {
     event.preventDefault();
-    setFilteredAdverts(adverts.filter(advert => advert.make === selectedMake));
+    setFilteredAdverts(
+      adverts.filter((advert) => advert.make === selectedMake),
+    );
     dispatch(setFilter(filteredAdverts));
   };
 
@@ -40,7 +42,7 @@ const Filter = () => {
           onChange={handleMakeSelectChange}
         >
           <option value="Enter the text">Enter the text</option>
-          {makes.map(make => (
+          {makes.map((make) => (
             <option key={uuidv4()} value={make}>
               {make}
             </option>
@@ -57,7 +59,7 @@ const Filter = () => {
           <option value="To $" disabled>
             To $
           </option>
-          {prices.map(price => (
+          {prices.map((price) => (
             <option key={uuidv4()} value={price}>
               {price}
             </option>
