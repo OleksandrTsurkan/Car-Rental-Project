@@ -15,11 +15,11 @@ import {
   LinkButton,
 } from './Card.styled';
 import getSplitArray from 'helpers/getSplitArray';
-import sprite from '../../assets/sprite.svg';
+import sprite from '.../../assets/sprite.svg';
 import Modal from 'components/Modal';
 import CardFull from 'components/CardFull';
-import { getFavorites, getAdverts } from 'redux/selectors';
-import { addFavorite, deleteFavorite } from 'redux/operations';
+import { getFavorites, getAdverts } from '../../redux/selectors';
+import { addFavorite, deleteFavorite } from '../../redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Card = ({ advertisement }) => {

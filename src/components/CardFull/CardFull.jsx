@@ -14,7 +14,7 @@ import {
   ButtonLink,
 } from './CardFull.styled';
 import { useSelector } from 'react-redux';
-import { getAdverts } from 'redux/selectors';
+import { getAdverts } from '../../redux/selectors';
 import getSplitArray from 'helpers/getSplitArray';
 
 const CardFull = ({ id }) => {
