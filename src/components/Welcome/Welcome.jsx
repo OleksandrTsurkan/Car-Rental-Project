@@ -5,20 +5,18 @@ import {
   Wrapper,
   LinkStyled,
   MainText,
-  MainDescription,
+  Description,
 } from './Welcome.styled';
 
 const Welcome = () => {
   return (
     <WelcomeWrapper>
-      <Logo>CarBlanche</Logo>
+      <Logo>Car Rental NYC</Logo>
       <Wrapper>
-        <MainText>
-          We are the best rental <p>car website</p>
-        </MainText>
-        <MainDescription>
-          Where your dream ride awaits among premium advertisements.
-        </MainDescription>
+        <MainText>Explore the world with comfort and style!</MainText>
+        <Description>
+          Make the real your dream
+        </Description>
         <LinkStyled to="/advertisement">GO!</LinkStyled>
       </Wrapper>
     </WelcomeWrapper>

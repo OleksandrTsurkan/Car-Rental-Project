@@ -50,14 +50,14 @@ export const Wrapper = styled.div`
 export const MainText = styled.h1`
   font-family: Roboto;
   font-weight: 500;
-  font-size: 50px;
+  font-size: 45px;
   width: 300px;
-  > p {
-    color: var(--color-accent);
-  }
+  color: var(--color-text-main);
 `;
 
-export const MainDescription = styled.p`
-  margin-bottom: 20px;
+export const Description = styled.p`
+  font-family: Roboto;
+  margin-bottom: 26px;
   width: 400px;
+  color: var(--color-text-main);
 `;

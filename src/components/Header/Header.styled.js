@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { MdCarRental } from 'react-icons/md';
 import { FaHeart } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
 
 export const HeaderWrapper = styled.div`
   position: fixed;
@@ -9,16 +8,11 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  border-bottom: 1px solid rgba(18, 20, 23, 0.1);
+  border-bottom: 2px solid var(--color-text-prescription);
   z-index: 1;
   width: 100%;
-  /* overflow-x: hidden; */
 
-  @media (max-width: 374px) {
-    padding: 12px 18px;
-  }
-
-  @media (min-width: 375px) and (max-width: 768px) {
+  @media (max-width: 768px) {
     padding: 12px 18px;
   }
 
@@ -31,11 +25,11 @@ export const HeaderWrapper = styled.div`
   }
 `;
 
-export const HeaderNavigation = styled.nav`
+export const HeaderNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
 
   &:hover,
   &:focus {
@@ -51,42 +45,37 @@ export const Logo = styled.p`
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
-  line-height: 20px;
+  line-height: 24px;
   color: var(--color-accent);
-  transition:
-    transform 0.4s var(--timing-function),
-    color 0.4s var(--timing-function);
+  transition: transform 0.8s var(--timing-function),
+    color 3s var(--timing-function);
   cursor: pointer;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     color: var(--color-hover);
   }
 `;
 
-export const StyledLink = styled(NavLink)``;
-
 export const MdCarRentalStyled = styled(MdCarRental)`
   color: var(--color-accent);
-  width: 38px;
-  height: 38px;
-  transition:
-    transform 0.4s var(--timing-function),
-    color 0.4s var(--timing-function);
+  width: 36px;
+  height: 36px;
+  transition: transform 0.8s var(--timing-function),
+    color 3s var(--timing-function);
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     color: var(--color-hover);
   }
 `;
 
 export const FaHeartStyled = styled(FaHeart)`
   color: var(--color-accent);
-  width: 38px;
-  height: 38px;
-  transition:
-    transform 0.4s var(--timing-function),
-    color 0.4s var(--timing-function);
+  width: 36px;
+  height: 36px;
+  transition: transform 0.8s var(--timing-function),
+    color 3s var(--timing-function);
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     color: var(--color-hover);
   }
 `;

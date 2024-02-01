@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   HeaderWrapper,
-  HeaderNavigation,
+  HeaderNav,
   Logo,
-  StyledLink,
   MdCarRentalStyled,
   FaHeartStyled,
 } from './Header.styled';
@@ -13,16 +12,16 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Link to="/">
-        <Logo>CarBlanche</Logo>
+        <Logo>Rental Budapest</Logo>
       </Link>
-      <HeaderNavigation>
-        <StyledLink to="/advertisement">
+      <HeaderNav>
+        <Link to="/advertisement">
           <MdCarRentalStyled />
-        </StyledLink>
-        <StyledLink to="/advertisement/favorites">
+        </Link>
+        <Link to="/advertisement/favorites">
           <FaHeartStyled />
-        </StyledLink>
-      </HeaderNavigation>
+        </Link>
+      </HeaderNav>
     </HeaderWrapper>
   );
 };
