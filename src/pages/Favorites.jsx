@@ -1,15 +1,15 @@
 import React from 'react';
-import Container from 'components/Container';
-import FavoriteList from 'components/FavoriteList';
-import Header from 'components/Header';
+import Container from '../components/Container';
+// import FavoriteList from 'components/FavoriteList';
+import AppBar from '../components/AppBar';
 
 const Favorites = () => {
   return (
     <>
       {' '}
-      <Header />
+      <AppBar />
       <Container>
-        <FavoriteList />
+        {/* <FavoriteList /> */}
       </Container>
     </>
   );

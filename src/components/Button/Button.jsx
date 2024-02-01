@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonStyled } from './Button.styled';
+import { ButtonStyled } from './ButtomStyled';
 
 const Button = ({ padding, children }) => {
   return (
