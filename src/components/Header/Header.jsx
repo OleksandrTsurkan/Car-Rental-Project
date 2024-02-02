@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Link to="/">
-        <Logo>Rental Budapest</Logo>
+        <Logo>Rental NYC</Logo>
       </Link>
       <HeaderNav>
         <Link to="/catalog">
