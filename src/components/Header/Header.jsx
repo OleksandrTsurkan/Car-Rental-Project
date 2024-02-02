@@ -5,7 +5,7 @@ import {
   HeaderNav,
   Logo,
   MdCarRentalStyled,
-  FaHeartStyled,
+  AiTwotoneRocketStyled,
 } from './Header.styled';
 
 const Header = () => {
@@ -19,7 +19,7 @@ const Header = () => {
           <MdCarRentalStyled />
         </Link>
         <Link to="/favorites">
-          <FaHeartStyled />
+          <AiTwotoneRocketStyled />
         </Link>
       </HeaderNav>
     </HeaderWrapper>

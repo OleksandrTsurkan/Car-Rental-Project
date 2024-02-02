@@ -14,6 +14,6 @@ const Advertisement = () => {
       </Container>
     </>
   );
-};
+}; 
 
 export default Advertisement;

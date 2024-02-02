@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { MdCarRental } from 'react-icons/md';
-import { FaHeart } from 'react-icons/fa';
+import { AiFillCar } from 'react-icons/ai';
+import { AiTwotoneRocket } from 'react-icons/ai';
+
 
 export const HeaderWrapper = styled.div`
   position: fixed;
@@ -56,7 +57,7 @@ export const Logo = styled.p`
   }
 `;
 
-export const MdCarRentalStyled = styled(MdCarRental)`
+export const MdCarRentalStyled = styled(AiFillCar)`
   color: var(--color-accent);
   width: 36px;
   height: 36px;
@@ -68,7 +69,7 @@ export const MdCarRentalStyled = styled(MdCarRental)`
   }
 `;
 
-export const FaHeartStyled = styled(FaHeart)`
+export const AiTwotoneRocketStyled = styled(AiTwotoneRocket)`
   color: var(--color-accent);
   width: 36px;
   height: 36px;
