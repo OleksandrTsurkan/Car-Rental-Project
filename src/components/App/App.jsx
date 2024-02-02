@@ -21,8 +21,8 @@ const App = () => {
   return (
     <Routes location={location} key={location.pathname}>
       <Route path="/" element={<Home />} />
-      <Route path="/advertisement" element={<Advertisement />} />
-      <Route path="/advertisement/favorites" element={<Favorites />} />
+      <Route path="/catalog" element={<Advertisement />} />
+      <Route path="/favorites" element={<Favorites />} />
     </Routes>
   );
 };

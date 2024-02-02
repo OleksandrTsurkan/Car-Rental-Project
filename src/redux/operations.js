@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const LIMIT = 12;
 
 axios.defaults.baseURL = 'https://65ba448db4d53c06655270e7.mockapi.io/api/';
 
@@ -10,19 +9,6 @@ export const fetchAdverts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/adverts');
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-
-
-export const fetchOnePageCars = createAsyncThunk(
-  'adverts/fetchOnePage',
-  async (page, thunkAPI) => {
-    try {
-      const response = await axios.get(`/adverts?page=${page}&limit=${LIMIT}`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

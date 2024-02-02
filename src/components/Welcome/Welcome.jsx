@@ -17,7 +17,7 @@ const Welcome = () => {
         <Description>
           Make the real your dream
         </Description>
-        <LinkStyled to="/advertisement">GO!</LinkStyled>
+        <LinkStyled to="/catalog">GO!</LinkStyled>
       </Wrapper>
     </WelcomeWrapper>
   );

@@ -15,10 +15,10 @@ const Header = () => {
         <Logo>Rental Budapest</Logo>
       </Link>
       <HeaderNav>
-        <Link to="/advertisement">
+        <Link to="/catalog">
           <MdCarRentalStyled />
         </Link>
-        <Link to="/advertisement/favorites">
+        <Link to="/favorites">
           <FaHeartStyled />
         </Link>
       </HeaderNav>
