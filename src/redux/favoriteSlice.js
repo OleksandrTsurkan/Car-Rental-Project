@@ -11,9 +11,18 @@ const handleRejected = (state, { payload }) => {
   state.error = payload;
 };
 
-export const favoritesSlice = createSlice({
+const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: favoritesInitialState,
+  reducers: {
+    setFavoriteIcon: (state, action) => {
+      const { id, isFavorite } = action.payload;
+      const itemIndex = state.items.findIndex(item => item.id === id);
+      if (itemIndex !== -1) {
+        state.items[itemIndex].isFavorite = isFavorite;
+      }
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchFavorites.pending, handlePending)
@@ -42,5 +51,5 @@ export const favoritesSlice = createSlice({
       .addCase(deleteFavorite.rejected, handleRejected);
   },
 });
-
+export const { setFavoriteIcon } = favoritesSlice.actions;
 export const favoritesReducer = favoritesSlice.reducer;

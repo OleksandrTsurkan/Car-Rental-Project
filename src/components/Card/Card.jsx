@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   CardWrapper,
   ImgWrapper,
@@ -21,7 +21,7 @@ import CardFull from 'components/CardFull';
 import { getFavorites, getAdverts } from '../../redux/selectors';
 import { addFavorite, deleteFavorite } from '../../redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { setFavoriteIcon } from '../../redux/favoriteSlice';
 const Card = ({ advertisement }) => {
   const {
     id,
@@ -41,26 +41,45 @@ const Card = ({ advertisement }) => {
   const adverts = useSelector(getAdverts);
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
+  const [localIsFavorite, setLocalIsFavorite] = useState(false);
+  // const isFavorite = favorites.some(object => object.id === id);
+
+  const isFavorite = useSelector(state => {
+    const favorite = state.favorites.items.find(object => object.id === id);
+    return !!favorite;
+  });
+
+  useEffect(() => {
+    console.log('localIsFavorite:', localIsFavorite);
+    console.log('isFavorite:', isFavorite);
+  }, [localIsFavorite, isFavorite]);
 
   const toggleModal = () => {
-    setShowModal((prevState) => !prevState);
+    setShowModal(prevState => !prevState);
   };
+  useEffect(() => {
+    setLocalIsFavorite(isFavorite);
+  }, [isFavorite]);
 
   let spliterForAddress = ', ';
   let addressArray = getSplitArray(address, spliterForAddress);
 
+ 
   const handleFavorite = () => {
-    const favorite = favorites.find((object) => {
-      return object.id === id;
-    });
-    const advert = adverts.find((object) => object.id === id);
+    const favorite = favorites.find(object => object.id === id);
+    const advert = adverts.find(object => object.id === id);
     if (!favorite) {
-      dispatch(addFavorite(advert));
+      dispatch(addFavorite(advert)).then(() => {
+        dispatch(setFavoriteIcon({ id, isFavorite: true }));
+        setLocalIsFavorite(true);
+      });
     } else {
-      dispatch(deleteFavorite(favorite._id));
+      dispatch(deleteFavorite(favorite.id)).then(() => {
+        dispatch(setFavoriteIcon({ id, isFavorite: false }));
+        setLocalIsFavorite(false);
+      });
     }
   };
-  const isFavorite = favorites.some((object) => object.id === id);
   return (
     <CardWrapper>
       <ImgWrapper>
@@ -71,7 +90,7 @@ const Card = ({ advertisement }) => {
       </ImgWrapper>
 
       <ButtonFavorite type="button" onClick={handleFavorite}>
-        {isFavorite ? (
+        {localIsFavorite ? (
           <FavoriteImg>
             <use href={`${sprite}#icon-favorite`} />
           </FavoriteImg>
