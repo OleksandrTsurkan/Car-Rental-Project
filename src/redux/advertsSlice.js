@@ -25,7 +25,7 @@ export const loadMoreAdverts = createAsyncThunk(
 );
 
 const advertsSlice = createSlice({
-  name: 'adcerts',
+  name: 'adverts',
   initialState: advertsInitialState,
   extraReducers: builder => {
     builder

@@ -1,6 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage';
-import { reducer } from './reducer';
 import {
   persistStore,
   persistReducer,
@@ -12,9 +10,13 @@ import {
   REGISTER,
 } from 'redux-persist';
 
+import storage from 'redux-persist/lib/storage';
+import { reducer } from './reducer';
+
 const persistConfig = {
-  key: 'root',
+  key: 'favorites',
   storage,
+  // whitelist: ['favorites'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);
@@ -28,5 +30,4 @@ export const store = configureStore({
       },
     }),
 });
-
 export const persistor = persistStore(store);
