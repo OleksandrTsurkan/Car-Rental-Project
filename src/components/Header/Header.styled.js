@@ -1,7 +1,5 @@
-import styled from 'styled-components';
-import { AiFillCar } from 'react-icons/ai';
+import styled from 'styled-components';import { AiFillCar } from 'react-icons/ai';
 import { AiTwotoneRocket } from 'react-icons/ai';
-
 
 export const HeaderWrapper = styled.div`
   position: fixed;

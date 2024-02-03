@@ -1,9 +1,9 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Home from '../../pages/Home';
-import Favorites from '../../pages/Favorites';
-import Advertisement from '../../pages/Advertisement';
+import Home from 'pages/Home';
+import Favorites from 'pages/Favorites';
+import Advertisement from 'pages/Advertisement';
 import { fetchAdverts, fetchFavorites } from '../../redux/operations';
 
 const App = () => {

@@ -4,7 +4,7 @@ import {
   ImgWrapper,
   Img,
   MainText,
-  DescriptionWrapper, 
+  DescriptionWrapper,
   DescriptionText,
   AboutText,
   AboutMoreTitle,

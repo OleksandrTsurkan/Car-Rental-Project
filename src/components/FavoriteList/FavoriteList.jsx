@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from 'components/Card';
+import Card from 'components/Card/Card';
 import { v4 as uuidv4 } from 'uuid';
 import { getFavorites } from '../../redux/selectors';
 import { useSelector } from 'react-redux';

@@ -1,8 +1,7 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-
-axios.defaults.baseURL = 'https://65ba448db4d53c06655270e7.mockapi.io/api/';
+axios.defaults.baseURL = 'https://6569f71cde53105b0dd7f2eb.mockapi.io/api/';
 
 export const fetchAdverts = createAsyncThunk(
   'adverts/fetchAll',
@@ -10,10 +9,10 @@ export const fetchAdverts = createAsyncThunk(
     try {
       const response = await axios.get('/adverts');
       return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
-  }
+  },
 );
 
 export const fetchFavorites = createAsyncThunk(
@@ -22,10 +21,10 @@ export const fetchFavorites = createAsyncThunk(
     try {
       const response = await axios.get('/favorite');
       return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
-  }
+  },
 );
 
 export const addFavorite = createAsyncThunk(
@@ -34,10 +33,10 @@ export const addFavorite = createAsyncThunk(
     try {
       const response = await axios.post('/favorite', data);
       return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
-  }
+  },
 );
 
 export const deleteFavorite = createAsyncThunk(
@@ -46,8 +45,8 @@ export const deleteFavorite = createAsyncThunk(
     try {
       const response = await axios.delete(`/favorite/${id}`);
       return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
-  }
+  },
 );

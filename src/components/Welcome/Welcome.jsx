@@ -14,9 +14,7 @@ const Welcome = () => {
       <Logo>Car Rental NYC</Logo>
       <Wrapper>
         <MainText>Explore the world with comfort and style!</MainText>
-        <Description>
-          Make the real your dream
-        </Description>
+        <Description>Make the real your dream</Description>
         <LinkStyled to="/catalog">GO!</LinkStyled>
       </Wrapper>
     </WelcomeWrapper>

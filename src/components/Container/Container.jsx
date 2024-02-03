@@ -1,14 +1,14 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { SectionStyled, ContainerStyled } from './Container.styled';
-import welcome from '../../assets/base.jpg';
+import base from '../../assets/base.jpg';
 
 const Container = ({ height, $paddingTop, children }) => {
   const location = useLocation();
   let backgroundImage = 'none';
 
   if (location.pathname === '/') {
-    backgroundImage = `url(${welcome})`;
+    backgroundImage = `url(${base})`;
   }
 
   return (

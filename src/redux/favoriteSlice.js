@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { favoritesInitialState } from './initialState';
 import { fetchFavorites, addFavorite, deleteFavorite } from './operations';
 
-const handlePending = state => {
+const handlePending = (state) => {
   state.isLoading = true;
 };
 
@@ -14,16 +14,7 @@ const handleRejected = (state, { payload }) => {
 const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: favoritesInitialState,
-  reducers: {
-    setFavoriteIcon: (state, action) => {
-      const { id, isFavorite } = action.payload;
-      const itemIndex = state.items.findIndex(item => item.id === id);
-      if (itemIndex !== -1) {
-        state.items[itemIndex].isFavorite = isFavorite;
-      }
-    },
-  },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
       .addCase(fetchFavorites.pending, handlePending)
       .addCase(fetchFavorites.fulfilled, (state, { payload }) => {
@@ -44,12 +35,12 @@ const favoritesSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const index = state.items.findIndex(
-          favorite => favorite._id === payload._id
+          (favorite) => favorite._id === payload._id,
         );
         state.items.splice(index, 1);
       })
       .addCase(deleteFavorite.rejected, handleRejected);
   },
 });
-export const { setFavoriteIcon } = favoritesSlice.actions;
+
 export const favoritesReducer = favoritesSlice.reducer;
